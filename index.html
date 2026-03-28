@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Mario Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div class="hud__left">
+          <span>MARIO</span>
+          <strong id="score">000000</strong>
+        </div>
+        <div class="hud__center">
+          <span>COINS</span>
+          <strong id="coins">x00</strong>
+        </div>
+        <div class="hud__right">
+          <span>WORLD</span>
+          <strong id="world">1-1</strong>
+        </div>
+        <div class="hud__timer">
+          <span>TIME</span>
+          <strong id="time">400</strong>
+        </div>
+      </header>
+
+      <section class="game-shell">
+        <canvas id="game" width="1024" height="576" aria-label="Mario game"></canvas>
+        <aside class="panel">
+          <h1>Super Mario Clone</h1>
+          <p id="status">Press <kbd>Enter</kbd> to start.</p>
+          <ul>
+            <li><kbd>A</kbd>/<kbd>D</kbd> or <kbd>←</kbd>/<kbd>→</kbd> move</li>
+            <li><kbd>Space</kbd>/<kbd>W</kbd>/<kbd>↑</kbd> jump</li>
+            <li><kbd>Shift</kbd> run / fire</li>
+            <li><kbd>P</kbd> pause, <kbd>M</kbd> mute</li>
+            <li><kbd>R</kbd> restart level</li>
+          </ul>
+          <div class="toggles">
+            <label><input id="particlesToggle" type="checkbox" checked /> Particles</label>
+            <label><input id="musicToggle" type="checkbox" checked /> Music</label>
+            <label><input id="touchToggle" type="checkbox" /> Touch Controls</label>
+          </div>
+          <div class="highscore">Best Score: <strong id="highscore">0</strong></div>
+        </aside>
+      </section>
+
+      <section id="touch" class="touch" hidden>
+        <button data-key="left">◀</button>
+        <button data-key="right">▶</button>
+        <button data-key="jump">⤒</button>
+        <button data-key="run">⚡</button>
+      </section>
+    </main>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
